@@ -52,7 +52,10 @@ class Library:
 
 
 def main():
-	zipfilename = 'test.zip'
+	try:
+		zipfilename = input("\nEnter name of file(test.zip) - \n")
+	except FileNotFoundError:
+		return print("No file with that name")
 	dictionary = 'dictionary.txt'
 	zip_file = zipfile.ZipFile(zipfilename)
 	password = None
